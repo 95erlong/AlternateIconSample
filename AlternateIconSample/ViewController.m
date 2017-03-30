@@ -13,6 +13,28 @@
 @end
 
 @implementation ViewController
+- (IBAction)changeAppIcon:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            [[UIApplication sharedApplication] setAlternateIconName:nil completionHandler:^(NSError * _Nullable error) {
+                NSLog(@"error = %@", error.localizedDescription);
+            }];
+            break;
+        case 1:
+            [[UIApplication sharedApplication] setAlternateIconName:@"Test1" completionHandler:^(NSError * _Nullable error) {
+                NSLog(@"error = %@", error.localizedDescription);
+            }];
+            break;
+        case 2:
+            [[UIApplication sharedApplication] setAlternateIconName:@"Test2" completionHandler:^(NSError * _Nullable error) {
+                NSLog(@"error = %@", error.localizedDescription);
+            }];
+            break;
+            
+        default:
+            break;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
